@@ -4,12 +4,23 @@
  * @return {string} the number as a string
  */
 
+function numberToString(num){
+  num = num.toString();
+  return num;
+}
+
+numberToString(14);
 
 /**
  * Adds one to a given number.
  * @param {number} n
  * @return {number}
  */
+
+ function increase(n){
+  n = n + 1;
+  return n;
+ }
 
 
 /**
@@ -18,7 +29,10 @@
  * @return {number}
  */
 
-
+function decrease(n){
+  n = n - 1;
+  return n;
+}
 /**
  * Adds two numbers.
  * @param {number} x
@@ -26,7 +40,10 @@
  * @return {number} the sum
  */
 
-
+function add(x, y){
+  sum = x + y;
+  return sum;
+}
 /**
  * Subtracts the second number from the first.
  * @param {number} x
