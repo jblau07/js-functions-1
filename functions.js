@@ -74,14 +74,20 @@ function multiply(x, y){
  * @return {number} the quotient
  */
 
-
+function divide(x, y){
+  quotient = x / y;
+  return quotient;
+}
 /**
  * Multiplies a number by itself.
  * @param {number} x, number to be squared
  * @return {number} squared
  */
 
-
+function square(x){
+  num = x * x;
+  return num;
+}
 /**
  * Performs a mathematical operation on two numbers.
  * Also prints out the equation: (i.e.) "1 + 5 = 6" or "8 / 2 = 4".
@@ -91,7 +97,34 @@ function multiply(x, y){
  * @return {number} the result
  */
 
+function calculate(operation, x, y){
+  var answer;
 
+  if (operation == "add") {
+    answer = add(x,y);
+    console.log(x + " + " + y + " = " + answer)
+  }
+
+  else if(operation == "subtract"){
+    answer = subtract(x,y);
+    console.log(x + " - " + y + " = " + answer)
+  }
+
+  else if(operation == "multiply"){
+    answer = multiply(x,y);
+    console.log(x + " x " + y + " = " + answer)
+  }
+
+  else if(operation == "divide"){
+    answer = divide(x,y);
+    console.log(x + " / " + y + " = " + answer)
+  }
+
+  return answer;
+
+  }
+
+console.log(calculate("multiply",3,8));
 /**
  * Returns true if `a` is greater than `b`.
  * @param {number} a
@@ -99,6 +132,14 @@ function multiply(x, y){
  * @return {boolean} `a` is larger than `b`
  */
 
+function isGreaterThan(a, b){
+  if (a > b){
+    console.log(a + " is larger than " + b);
+    return true
+  }else{
+    return false
+  }
+}
 
 /**
  * Returns true if `a` is less than `b`.
@@ -107,6 +148,14 @@ function multiply(x, y){
  * @return {boolean} `a` is smaller than `b`
  */
 
+function isLessThan(a, b){
+  if (a < b){
+    console.log(a + " is smaller than " + b);
+    return true
+  }else{
+    return false
+  }
+}
 
 /**
  * Returns true if `a` and `b` are equal.
@@ -115,6 +164,14 @@ function multiply(x, y){
  * @return {boolean} the numbers are equal
  */
 
+function areEqual(a, b){
+  if (a === b){
+    console.log("The numbers are equal");
+    return true
+  }else{
+    return false
+  }
+}
 
 /**
  * Returns the smallest value of two numbers.
@@ -123,6 +180,15 @@ function multiply(x, y){
  * @return {number} the smallest number
  */
 
+function minimum(x, y){
+  if (x<y){
+    console.log(x + " is the smallest number");
+    return x
+  }else{
+    console.log(y + " is the smallest number")
+    return y
+  }
+}
 
 /**
  * Returns the largest value of two numbers.
@@ -131,6 +197,15 @@ function multiply(x, y){
  * @return {number} the largest number
  */
 
+function maximum(x, y){
+  if (x>y){
+    console.log(x + " is the largest number")
+    return x
+  }else{
+    console.log(y + " is the largest number")
+    return y
+  }
+}
 
 /**
  * Returns true if `n` is even.
@@ -138,13 +213,28 @@ function multiply(x, y){
  * @return {boolean} the number is even
  */
 
-
+function isEven(n){
+  if (n%2 === 0){
+    console.log("The number is even");
+    return true
+  }else{
+    return false
+  }
+}
 /**
  * Returns true if `n` is odd.
  * @param {number} n
  * @return {boolean} the number is odd
  */
 
+function isOdd(n){
+  if (n&2 != 0){
+    console.log("The number is odd");
+    return true
+  }else{
+    return false
+  }
+}
 
 /**
  * Returns a letter grade.
@@ -157,6 +247,23 @@ function multiply(x, y){
  * @param {number} total maximum possible score
  * @return {string} the score represented as a letter grade
  */
+ function letterGrade(score, total){
+
+  var grade = divide(score, total)*100;
+
+  if (grade >= 90){
+    return "A";
+  }else if (grade >= 80){
+    return "B";
+  }else if (grade >= 70){
+    return "C";
+  }else if (grade >=60){
+    return "D"
+  }else{
+    return "F";
+  }
+
+ }
 
 
 /**
@@ -167,6 +274,15 @@ function multiply(x, y){
  * @return {object} restaurant
  */
 
+ function incrementReviews(restaurant){
+  if(restaurant.reviews){
+    restaurant.reviews ++;
+  }else{
+    restaurant.reviews = 1;
+  }
+  return restaurant
+ }
+
 
 /**
  * Joins two strings with a space.
@@ -174,6 +290,12 @@ function multiply(x, y){
  * @param {string} word2
  * @return {string} joined the words joined with a space
  */
+
+ function combine(word1, word2){
+  var join = word1 + " " + word2;
+  console.log(join);
+  return join
+ }
 
 
 /**
@@ -183,4 +305,14 @@ function multiply(x, y){
  * @param {number} radius
  * @return {object} circle
  */
+
+function createCircle(radius){
+  var circle = {};
+  circle.circumference = (2 * radius) * Math.PI
+  circle.area = Math.PI * (radius * radius)
+
+
+return circle
+
+}
 
